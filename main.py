@@ -3,6 +3,7 @@ from discord.ext import commands
 import requests
 from bs4 import BeautifulSoup
 import random
+from passs import KEY
 
 client = commands.Bot(command_prefix='.')
 
@@ -128,4 +129,4 @@ async def exchange(ctx, amount, base_currency, target_currency):
     answer = requests.get(url).json()['rates'][target_currency.upper()]
     await ctx.send(amount + ' ' + base_currency.upper() + ' equals ' + str(float(amount) * round(answer, 2)) + ' ' + target_currency.upper())
   
-client.run('NjMyNjQwMDkzNTUwODA1MDIz.XaIWdg.15CQzosS3qKeTL2zG2GkD9olkRY')
+client.run(KEY)
